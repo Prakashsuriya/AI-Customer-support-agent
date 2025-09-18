@@ -301,23 +301,61 @@ const sendMessage = async (req, res) => {
 
 const getChatHistory = async (req, res) => {
   try {
+    // Input validation
     if (!req.user?._id) {
       return res.status(401).json({ 
-        message: 'User not authenticated',
-        isError: true 
+        success: false,
+        message: 'Authentication required. Please log in to view chat history.',
+        error: 'UNAUTHORIZED',
+        code: 401
       });
     }
-    
+
+    // Get pagination parameters with defaults
+    const page = parseInt(req.query.page) || 1;
+    const limit = Math.min(parseInt(req.query.limit) || 20, 100); // Max 100 messages per page
+    const skip = (page - 1) * limit;
+
+    // Get total count of messages for pagination
+    const totalMessages = await Message.countDocuments({ user: req.user._id });
+    const totalPages = Math.ceil(totalMessages / limit);
+
+    // Fetch messages with pagination and sorting (newest first)
     const messages = await Message.find({ user: req.user._id })
-      .sort({ createdAt: 1 })
-      .limit(50); // Limit to most recent 50 messages
-      
-    res.json(messages);
+      .sort({ createdAt: -1 }) // Newest first
+      .skip(skip)
+      .limit(limit);
+
+    // Prepare response
+    const response = {
+      success: true,
+      data: messages,
+      pagination: {
+        currentPage: page,
+        totalPages,
+        totalItems: totalMessages,
+        itemsPerPage: limit
+      },
+      meta: {
+        hasNextPage: page < totalPages,
+        hasPreviousPage: page > 1
+      }
+    };
+    
+    res.status(200).json(response);
   } catch (error) {
-    console.error('Error fetching chat history:', error);
+    console.error('Error fetching chat history:', {
+      error: error.message,
+      stack: error.stack,
+      userId: req.user?._id,
+      timestamp: new Date().toISOString()
+    });
+    
     res.status(500).json({ 
-      message: 'Error fetching chat history',
-      isError: true 
+      success: false,
+      message: 'Failed to retrieve chat history. Please try again later.',
+      error: 'INTERNAL_SERVER_ERROR',
+      code: 500
     });
   }
 };
