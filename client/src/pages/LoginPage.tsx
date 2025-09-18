@@ -24,7 +24,7 @@ const StyledPaper = styled(Paper)(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  borderRadius: theme.shape.borderRadius * 2,
+  borderRadius: Number(theme.shape.borderRadius) * 2,
   boxShadow: theme.shadows[10],
   background: theme.palette.background.paper,
   [theme.breakpoints.up('md')]: {
