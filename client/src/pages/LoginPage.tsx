@@ -180,7 +180,7 @@ const LoginPage: React.FC = () => {
                     backgroundColor: 'rgba(255, 255, 255, 0.7)',
                     mx: 0.5,
                     animation: 'bounce 1.5s infinite',
-                    animationDelay: `${i * 0.2}s`,
+                    animationDelay: `${Number(i) * 0.2}s`,
                     '@keyframes bounce': {
                       '0%, 100%': { transform: 'translateY(0)' },
                       '50%': { transform: 'translateY(-8px)' },
@@ -277,9 +277,10 @@ const LoginPage: React.FC = () => {
               <Box sx={{ textAlign: 'center', mt: 2 }}>
                 <Typography variant="body2" color="text.secondary">
                   {t('login.noAccount')}{' '}
-                  <Link
+                  <Box
+                    component={Link}
                     to="/signup"
-                    style={{
+                    sx={{
                       color: theme.palette.primary.main,
                       textDecoration: 'none',
                       fontWeight: 500,
@@ -289,7 +290,7 @@ const LoginPage: React.FC = () => {
                     }}
                   >
                     {t('login.signUp')}
-                  </Link>
+                  </Box>
                 </Typography>
               </Box>
             </StyledForm>
