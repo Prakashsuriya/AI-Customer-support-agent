@@ -170,9 +170,9 @@ const LoginPage: React.FC = () => {
               {t('login.subtitle')}
             </Typography>
             <Box sx={{ display: 'flex', mt: 2, position: 'relative', zIndex: 1 }}>
-              {[...Array(3)].map((_, i) => (
+              {Array.from({ length: 3 }, (_, index) => (
                 <Box
-                  key={i}
+                  key={index}
                   sx={{
                     width: 12,
                     height: 12,
@@ -180,7 +180,7 @@ const LoginPage: React.FC = () => {
                     backgroundColor: 'rgba(255, 255, 255, 0.7)',
                     mx: 0.5,
                     animation: 'bounce 1.5s infinite',
-                    animationDelay: `${Number(i) * 0.2}s`,
+                    animationDelay: `${index * 0.2}s`,
                     '@keyframes bounce': {
                       '0%, 100%': { transform: 'translateY(0)' },
                       '50%': { transform: 'translateY(-8px)' },
