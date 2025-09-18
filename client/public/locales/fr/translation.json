@@ -1,0 +1,35 @@
+{
+  "appTitle": "Assistance Client IA",
+  "switchToLight": "Passer en mode clair",
+  "switchToDark": "Passer en mode sombre",
+  "footer": "Agent d'assistance client IA. Tous droits réservés.",
+  "login": {
+    "title": "Connexion",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "submit": "Se connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire"
+  },
+  "signup": {
+    "title": "Créer un compte",
+    "username": "Nom d'utilisateur",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "submit": "S'inscrire",
+    "haveAccount": "Vous avez déjà un compte ?",
+    "signIn": "Se connecter"
+  },
+  "chat": {
+    "send": "Envoyer",
+    "typeMessage": "Tapez un message...",
+    "welcome": "Bienvenue sur l'assistance client IA. Comment puis-je vous aider aujourd'hui ?"
+  },
+  "errors": {
+    "required": "Ce champ est obligatoire",
+    "email": "Veuillez entrer un e-mail valide",
+    "passwordLength": "Le mot de passe doit contenir au moins 6 caractères",
+    "passwordMatch": "Les mots de passe ne correspondent pas"
+  }
+}

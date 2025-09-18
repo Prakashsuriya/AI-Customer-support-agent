@@ -1,0 +1,35 @@
+{
+  "appTitle": "AI Customer Support",
+  "switchToLight": "Switch to light mode",
+  "switchToDark": "Switch to dark mode",
+  "footer": "AI Customer Support Agent. All rights reserved.",
+  "login": {
+    "title": "Login",
+    "email": "Email",
+    "password": "Password",
+    "submit": "Sign In",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "signup": {
+    "title": "Create Account",
+    "username": "Username",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "submit": "Sign Up",
+    "haveAccount": "Already have an account?",
+    "signIn": "Sign In"
+  },
+  "chat": {
+    "send": "Send",
+    "typeMessage": "Type a message...",
+    "welcome": "Welcome to AI Customer Support. How can I help you today?"
+  },
+  "errors": {
+    "required": "This field is required",
+    "email": "Please enter a valid email",
+    "passwordLength": "Password must be at least 6 characters",
+    "passwordMatch": "Passwords do not match"
+  }
+}

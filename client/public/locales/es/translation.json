@@ -1,0 +1,35 @@
+{
+  "appTitle": "Soporte al Cliente con IA",
+  "switchToLight": "Cambiar a modo claro",
+  "switchToDark": "Cambiar a modo oscuro",
+  "footer": "Agente de Soporte al Cliente con IA. Todos los derechos reservados.",
+  "login": {
+    "title": "Iniciar Sesión",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "submit": "Iniciar Sesión",
+    "noAccount": "¿No tienes una cuenta?",
+    "signUp": "Registrarse"
+  },
+  "signup": {
+    "title": "Crear Cuenta",
+    "username": "Nombre de Usuario",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "submit": "Registrarse",
+    "haveAccount": "¿Ya tienes una cuenta?",
+    "signIn": "Iniciar Sesión"
+  },
+  "chat": {
+    "send": "Enviar",
+    "typeMessage": "Escribe un mensaje...",
+    "welcome": "Bienvenido al Soporte al Cliente con IA. ¿En qué puedo ayudarte hoy?"
+  },
+  "errors": {
+    "required": "Este campo es obligatorio",
+    "email": "Por favor ingresa un correo electrónico válido",
+    "passwordLength": "La contraseña debe tener al menos 6 caracteres",
+    "passwordMatch": "Las contraseñas no coinciden"
+  }
+}
