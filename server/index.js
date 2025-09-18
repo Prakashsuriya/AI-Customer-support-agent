@@ -11,12 +11,24 @@ app.use(express.json());
 
 const connectDB = async () => {
   try {
-    const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/ai-customer-support-agent';
-    console.log('Connecting to MongoDB at:', mongoURI);
-    await mongoose.connect(mongoURI);
-    console.log('MongoDB Connected...');
+    if (!process.env.MONGODB_URI) {
+      throw new Error('MONGODB_URI is not defined in environment variables');
+    }
+    
+    console.log('Connecting to MongoDB...');
+    await mongoose.connect(process.env.MONGODB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    
+    console.log('MongoDB Connected Successfully!');
   } catch (err) {
-    console.error('MongoDB connection error:', err.message);
+    console.error('MongoDB Connection Error:', err.message);
+    console.error('Please make sure:');
+    console.error('1. Your MongoDB Atlas cluster is running');
+    console.error('2. Your IP is whitelisted in MongoDB Atlas');
+    console.error('3. Your connection string is correct');
+    console.error('4. You have internet connection');
     process.exit(1);
   }
 };
